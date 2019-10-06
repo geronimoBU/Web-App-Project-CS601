@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>BdySqd - Home</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Eczar&display=swap" rel="stylesheet">
+        <style>
+                body {
+                margin: 0;
+                font-family: 'Eczar', serif;
+                background-color: #004250;
+                font-size: 2vw;
+
+                }
+    
+                .topnav {
+                overflow: hidden;
+                background-color: #004250;
+                position: relative;
+                
+                }
+                
+                .topnav a {
+                float: left;
+                color: lightblue;
+                text-align: center;
+                padding: 16px 19px;
+                text-decoration: none;
+                
+                margin-top: 1%;
+                position: relative;
+                }
+    
+                .topnav a:hover {
+                color: rgb(135, 190, 226);
+                }
+    
+                .topnav a.active {
+                color: rgb(168, 168, 168);
+                font-weight: bold;
+                }
+    
+                img {
+                    padding: 10px;
+                    display: grid;
+                    height: 100%;
+                    float: left;
+                }
+    
+                .bdysqd {
+                    max-width: 100%;
+                    max-height: 25vh;
+                    margin: auto;
+                }
+
+                #top_section{
+                    text-align: center;
+                    font-size: 5vh;
+                    color: lightblue;
+                    height: 60vh;
+                    position: inherit;
+                    margin-bottom: 100px;
+                    
+                }
+
+                #reasons{
+                    position: absolute;
+                    background-color: lightblue;
+                    color: #004250;
+                    width: 50vw;
+                    left: 25%;
+                    border-radius: 25px;
+                    animation: fadeInAnimation ease 3s; 
+                    animation-iteration-count: 1; 
+                    animation-fill-mode: forwards;
+                }
+
+                #book_now{
+                    position: absolute;
+                    bottom: 14%;
+                    display: inline;
+                    right: 44%;
+                    color: lightblue;
+                    border: lightblue;
+                    text-decoration: none;
+                    padding-top: 0px;
+                }
+
+                #book_now a.hover{
+                    color: black;
+                }
+
+                #learn_more{
+                    position: absolute;
+                    bottom: 5%;
+                    display: inline;
+                    right: 45%;
+                    color:grey;
+                    border: lightblue;
+                    text-decoration: none;
+                    background-color:#004250;
+                    font-size: 3vh;
+                    
+                }
+
+                i.down{
+                    border: solid black;
+                    border-width: 0 6px 6px 0;
+                    display: inline-block;
+                    padding: 3px;
+                    transform: rotate(45deg);
+                    -webkit-transform: rotate(45deg);
+                    }
+
+                #learn_more_section{
+                    display: none;
+                    text-align: center;
+                }
+                
+            </style>
+            <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    </head>
+    <body>
+        <div class="topnav">
+            <img alt="none" class="bdysqd" src="bdysqd.png">
+            <a class="active" href="home.html">Home</a>
+            <a href="schedule.html">Schedule</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="mobile_squad.html">Mobile Squad</a>
+        </div>
+
+        <div id="top_section">
+            <div id="title">why recovery + performance.</div>
+            <div class="fade_in" id="reasons">
+                <div id="p1">+ increased mobility & flexability</div>
+                <div id="p2">+ better agility & strength</div>
+                <div id="p3">+ relief from sore muscles</div>
+                <div id="p4">+ deeper sleep</div>
+            </div> 
+            <a id="book_now" href="schedule.html" style="border-style: solid; padding-top: 10px; border-color: lightblue;">Book Now</a>
+            <button id="learn_more" onclick="learnMore()">
+                <div style="text-align: center">Learn More</div>
+                <i  class="down"></i>
+            </button>
+        </div>
+
+        <div id="learn_more_section" style="background: white">
+            <div style="padding-top: 20px" ><u>in the studio.</u></div>
+            <p style="color: #004250; font-size: 1vw">Modern life – with all of the demands and high intensity that it brings – calls for an even more dedicated approach to rest and physical recovery. Three complementary modalities deliver deep muscle release, full body alignment and detoxification. Our 30-minute sessions can be used alone, or in combination, to support the body’s natural ability to repair and balance itself. </p>
+            <div style="padding-top: 20px"><u>the mobile squad</u></div>
+            <div style="color: lightblue; font-size: 1vw">race day team training</div>
+            <p style="color: #004250; font-size: 1vw">Experience the dramatic difference our myofascial release protocol can make before or after the sweat. Let our mobile squad be a regular part of your athletic events and practices to effectively manage pain points and address tension areas. We increase performance, decrease recovery time and keep your crew firing on all cylinders.</p>
+            <div style="color: lightblue; font-size: 1vw">wellness programs at work</div>
+            <p style="color: #004250; font-size: 1vw">No need to come to the studio to release contracted head, neck and shoulder muscles from hours of mental gymnastics at work. Our recovery coaches travel to your office or venue with all the same tools we use in the studio to relieve aches, pains and tension. Our work puts you in the right headspace – thinking clearly, with renewed energy and increased productivity.</p>
+            <a style="padding-top: 10px" id="mobile_squad" href="mobile_squad.html">Learn more about mobile squad</a>
+        </div>       
+        
+        <script>
+            function learnMore(){
+                var x = document.getElementById("learn_more_section");
+                if (x.style.display === "none") {
+                x.style.display = "block";
+                } else {
+                x.style.display = "none";
+                }
+                }
+
+
+        </script>
+    </body>
+</html>

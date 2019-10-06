@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            BDYSQD - Pricing
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Eczar&display=swap" rel="stylesheet">
+        <style>
+                body {
+                margin: 0;
+                font-family: 'Eczar', serif;
+                background-color: #004250;
+                }
+    
+                .topnav {
+                overflow: hidden;
+                background-color: #004250;
+                position: relative;
+                
+                }
+                
+                .topnav a {
+                float: left;
+                color: lightblue;
+                text-align: center;
+                padding: 16px 19px;
+                text-decoration: none;
+                font-size: 2vw;
+                margin-top: 1%;
+                position: relative;
+                }
+    
+                .topnav a:hover {
+                color: rgb(135, 190, 226);
+                }
+    
+                .topnav a.active {
+                color: rgb(168, 168, 168);
+                font-weight: bold;
+                }
+    
+                img {
+                    padding: 10px;
+                    display: grid;
+                    height: 100%;
+                    float: left;
+                }
+    
+                .bdysqd {
+                    max-width: 100%;
+                    max-height: 25vh;
+                    margin: auto;
+                }
+                
+                #top_section{
+                    height: 190px;
+                    width: 100%;
+                    
+                }
+
+                #first_timer_container{
+                    position: absolute;
+                    left: 34%;
+                    text-align: center;
+                    width: 450px;
+                    height: 180px;
+                    background: lightblue;
+                    border: 6px solid black;
+                    
+                    border-radius: 25px;
+                }
+
+                #strike{
+                    text-decoration: line-through;
+                }
+
+                #memberships_box{
+                    height: 300px;
+                    
+                }
+
+                .row{
+                    height: 50%;
+                }
+
+                .price_button_container{
+                    width: 50%;
+                    height: 100%;
+                    float: left;
+                    position: relative;
+                }
+
+                .mButton{
+                    height: 125px;
+                    width: 125px;
+                    border-radius: 15px;
+                    background-color: grey;
+                    border-color: lightblue;
+                    border-width: 4px;
+                    text-align: center;
+                }
+
+                .button_content{
+                    font-size: 28px;
+                    color: rgb(119, 211, 241);
+                }
+
+                .button_price{
+                    font-size: 20px;
+                }
+
+                /* Modal Style */
+                .modal {
+                    display: none;           
+                    z-index: 1;
+                    left: 0;     
+                    width: 50%;
+                    height: 20%;
+                    background-color: white;
+                    position: fixed;
+                    top: 0;
+                    margin-left: 25%;
+                    margin-top: 15%;
+                    }
+
+                .mcontent {       
+                    padding: 20px;
+                    border: 2px solid rgb(122, 122, 122);
+                    margin: auto;
+                    width: 95%;
+                    height: 95%;
+                    background-color: #fefefe;
+                    }
+
+                .close_modal {
+                    color: #8a8888;   
+                    font-size: 26px;
+                    font-weight: bold;
+                    float: right;
+                    }
+
+                .close_modal:hover,
+                .close_modal:focus {
+                    color: darkslategray;         
+                    cursor: pointer;
+                    text-decoration: none;
+                    }
+
+
+            </style>
+    </head>
+    <body>
+
+        <div class="topnav">
+            <img alt="" class="bdysqd" src="bdysqd.png">
+            <a href="home.html">Home</a>
+            <a href="schedule.html">Schedule</a>
+            <a class = "active" href="pricing.html">Pricing</a>
+            <a href="mobile_squad.html">Mobile Squad</a>
+        </div>
+
+        <div id="top_section">
+            <div id="first_timer_container">
+                <div style="padding-top: 10px;font-size: 25px;">First Timer?</div>
+                <div>try a 60-minute introductory session</div>
+                <div>
+                        <div style="float: left; height: 15px; padding-left: 40%; font-size: 25px">$45</div>
+                        <div id="strike" style="float: left; height: 15px; margin-top: 17px; font-size: 10px">$110</div>
+                </div>
+                <div style="font-size: 12px; padding-top: 40PX; padding-bottom: 7px">*includes assisted stretch + infared sauna OR normatic boots</div>          
+                <button  onclick="displayModal(this.id, '$45')" id="First_Time_Offer" style="background-color: #004250; color: lightblue; font-size: 18px; border-radius: 10px">Book Now</button>
+            </div>
+        </div>
+
+        <div style="text-align: center; font-size: 30px; color: lightblue; margin-left: 20px">Monthly Memberships</div>
+
+        <div id="memberships_box">
+            <div id="top_row" class="row">
+                <div id="p1" class="price_button_container">
+                    <button onclick="displayModal(this.id, '$109')" id="Regular_Reset" class="mButton" style="float:right; margin: 5px;">
+                        <div class="button_content">Regular Reset</div>
+                        <div class="button_price">$109</div>
+                    </button>
+                </div>
+                <div id="p2" class="price_button_container">
+                    <button onclick="displayModal(this.id, '$379')" id="Deep_Repair" class="mButton" style="float: left; margin: 5px">
+                        <div class="button_content">Deep Repair</div>
+                        <div class="button_price">$379</div>
+                    </button>
+                </div>
+            </div>
+            <div id="bottom_row" class="row">
+                <div id="p3" class="price_button_container">
+                    <button onclick="displayModal(this.id, '$199')" id="Strong_Steady" class="mButton" style="float:right; margin: 5px;">
+                        <div class="button_content">Strong Steady</div>
+                        <div class="button_price">$199</div>
+                    </button>
+                </div>
+                <div id="p4" class="price_button_container">
+                    <button onclick="displayModal(this.id, '$169')" id="Stretch_Only" class="mButton" style="float: left; margin: 5px">
+                        <div class="button_content">Stretch Only</div>
+                        <div class="button_price">$169</div>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="modal" id="modal">
+            <div class="mcontent">
+                <span class="close_modal">&times;</span>
+                <p id="top">Please confirm your membership option below:</p>
+                <div id="modal_type"></div>
+                <div id="modal_price"></div>
+                <button id="modal_confirm" onclick="confirmAppt()" >Buy</button>
+            </div>
+        </div>
+
+        <script>
+            var modal = document.getElementById("modal");
+            var buttons = document.getElementsByClassName("times");
+            var span = document.getElementsByClassName("close_modal")[0];
+
+            function displayModal(id, price){
+                document.getElementById("modal_price").innerHTML = price;
+                document.getElementById("modal_type").innerHTML = id.split('_').join(" ");
+
+                modal.style.display = "block";
+            }
+
+            span.onclick = function(){
+                modal.style.display = "none";
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+            function confirmAppt(){
+                var type = document.getElementById("modal_type").innerHTML;
+                document.getElementById("modal_price").innerHTML = "";
+                document.getElementById("modal_type").innerHTML = "";
+                document.getElementById("top").innerHTML = "Thank you for purchasing the " + type + " package! See email for confirmation.";
+                modal.style.height = "10%";
+                document.getElementById("modal_confirm").style.display = "none";
+                setTimeout(function(){closeModal()}, 3000);
+
+            }
+
+            function closeModal(){
+                modal.style.display = "none";
+                document.getElementById("top").innerHTML = "Please confirm your membership option below:";
+                modal.style.height = "20%";
+                document.getElementById("modal_confirm").style.display = "block";
+            }
+        </script>
+    </body>
+</html>

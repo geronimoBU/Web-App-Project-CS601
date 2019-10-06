@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            BDYSQD - Schedule
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Eczar&display=swap" rel="stylesheet">
+        <style>
+                body {
+                margin: 0;
+                font-family: 'Eczar', serif;
+                background-color: #004250;
+                box-sizing: border-box;
+                }
+    
+                .topnav {
+                overflow: hidden;
+                background-color: #004250;
+                position: relative;
+                
+                }
+                
+                .topnav a {
+                float: left;
+                color: lightblue;
+                text-align: center;
+                padding: 16px 19px;
+                text-decoration: none;
+                font-size: 2vw;
+                margin-top: 1%;
+                position: relative;
+            
+                }
+    
+                .topnav a:hover {
+                color: rgb(135, 190, 226);
+                }
+    
+                .topnav a.active {
+                color: rgb(168, 168, 168);
+                font-weight: bold;
+                }
+    
+                img {
+                    padding: 10px;
+                    display: grid;
+                    height: 100%;
+                    float: left;
+                }
+    
+                .bdysqd {
+                    max-width: 100%;
+                    max-height: 25vh;
+                    margin: auto;
+                }
+    
+                h1{
+                    color: rgb(116, 190, 214);
+                    font-size: 2vw;
+                    text-align: center;
+
+                }
+
+                form{
+                    align-content: center;
+                    text-align: center;
+                    padding-bottom: 20px;
+                }
+
+
+                input[type="radio"] {
+                    position: absolute;
+                    visibility: hidden;
+                    display: none;
+                    }
+
+                label {
+                    color: #9a929e;
+                    cursor: pointer;
+                    font-weight: bold;
+                    padding-left: 10px;;
+                    }
+
+                input[type="radio"]:checked + label {
+                    color: #ccc8ce;
+                    background: #675f6b;
+                    }
+
+                label + input[type="radio"] + label {
+                    border-left: solid 2px #675f6b;
+                    }
+
+                input[type="date"]::-webkit-clear-button {
+                    display: none;
+                }
+
+                input[type="date"]::-webkit-inner-spin-button { 
+                    display: none;
+                }           
+
+                input[type="date"]::-webkit-calendar-picker-indicator {
+                    color: lightblue;
+                }      
+
+                input[type="date"] {
+                    appearance: none;
+                    -webkit-appearance: none;
+                    color: lightblue;
+                    border:1px solid #004250;
+                    font-size: 1vw;
+                    background:#004250;
+                    padding:5px;
+                    display: inline-block !important;
+                    visibility: visible !important;
+                }
+
+                input[type="date"], focus {
+                    color: #675f6b;
+                    box-shadow: none;
+                    -webkit-box-shadow: none;
+                    -moz-box-shadow: none;
+                }
+
+                input[type="submit"] {
+                    margin: 1vh;
+                    background: #675f6b;
+                    color: lightblue;
+                    font-size: 1vw;
+                    border-color: #9a929e;
+                }
+
+                #times_container{
+                    display: none;
+                    text-align: center;
+                    
+                }
+
+                /* Modal Style */
+                .modal {
+                    display: none;           
+                    z-index: 1;
+                    left: 0;     
+                    width: 50%;
+                    height: 28%;
+                    background-color: white;
+                    position: fixed;
+                    top: 0;
+                    margin-left: 25%;
+                    margin-top: 15%;
+                    }
+
+                .mcontent {       
+                    padding: 20px;
+                    border: 2px solid rgb(122, 122, 122);
+                    margin: auto;
+                    width: 95%;
+                    height: 95%;
+                    background-color: #fefefe;
+                    }
+
+                .close_modal {
+                    color: #8a8888;   
+                    font-size: 26px;
+                    font-weight: bold;
+                    float: right;
+                    }
+
+                .close_modal:hover,
+                .close_modal:focus {
+                    color: darkslategray;         
+                    cursor: pointer;
+                    text-decoration: none;
+                    }
+
+                .times{
+                    background-color: #004250;
+                    color: white;
+                }
+
+    
+            </style>
+    </head>
+    <body>
+        <div class="topnav">
+            <img alt="" class="bdysqd" src="bdysqd.png">
+            <a href="home.html">Home</a>
+            <a class = "active" href="schedule.html">Schedule</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="mobile_squad.html">Mobile Squad</a>
+        </div>
+
+
+        <div style="font-size: 30px; color: rgb(116, 190, 214);font-size: 2vw; text-align: center;">Schedule Your Session.</div>          
+        <form action="POST" id="form" onsubmit="return false">
+            
+            <input type="radio" id="sauna" name="selector1" value="Sauna"><label for="sauna">Sauna</label>
+            <input type="radio" id="normatec" name="selector1" value="NormaTec"><label for="normatec">NormaTec</label>
+            <input type="radio" id="stretch" name="selector1" value="Stretch"><label for="stretch">Stretch</label>
+
+            <div class="loc" style="padding-top: 15px;">
+                <input type="radio" id="back_bay" name="selector2" value="Back Bay"><label for="back_bay">Back Bay</label>
+                <input type="radio" id="ink_block" name="selector2" value="Ink Block"><label for="ink_block">Ink Block</label>
+            </div>
+
+            <div class="cal" style="padding-top: 1vh">
+                <input name="date" type="date" id = "date" required="required" style="margin-left: 5px; font-size: 16px; padding-left: 50px;">
+            </div>
+            <input type="submit" value="Find Times">
+        </form>
+        
+        <div style="display: none; text-align: center" id="times_container">
+            <div id="location_selection" style="color: rgb(116, 190, 214)"></div>
+            <div id="appointment_type" style="color: rgb(116, 190, 214)"></div>
+            <div id="date_selection" style="color: rgb(116, 190, 214)"></div>
+            
+            <button onclick="displayModal(this.id)" id="1:00pm" class="times">1:00pm</button>
+            <button onclick="displayModal(this.id)" id="2:30pm" class="times">2:30pm</button>
+            <button onclick="displayModal(this.id)" id="3:00pm" class="times">3:00pm</button>
+            <button onclick="displayModal(this.id)" id="4:30pm" class="times">4:30pm</button>
+            <button onclick="displayModal(this.id)" id="5:00pm" class="times">5:00pm</button>
+        </div>
+
+        <div class="modal" id="modal">
+            <div class="mcontent">
+                <span class="close_modal">&times;</span>
+                <p id="top">Please confirm your appointment below:</p>
+                <div id="modal_type"></div>
+                <div id="modal_loc"></div>
+                <div id="modal_date"></div>
+                <div id="modal_time"></div>
+                <button id="modal_confirm" onclick="confirmAppt()" >Confirm</button>
+            </div>
+        </div>
+        
+        <script>
+            var form = document.getElementById('form');
+
+            form.addEventListener("submit", function(event){
+                console.log("working");
+                var type = form.selector1.value;
+                var loc = form.selector2.value;
+                var date = form.date.value;
+                
+                console.log(type + loc + date);
+
+                document.getElementById('location_selection').innerHTML = loc;
+
+                console.log(document.getElementById('location_selection').innerHTML);
+                document.getElementById('appointment_type').innerHTML = type;
+                document.getElementById('date_selection').innerHTML = date;
+
+                var x = document.getElementById('times_container');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                    } 
+                    else {
+                    x.style.display = "none";
+                    }
+                });
+
+            var modal = document.getElementById("modal");
+            var buttons = document.getElementsByClassName("times");
+            var span = document.getElementsByClassName("close_modal")[0];
+
+            function displayModal(id){
+                var type = form.selector1.value;
+                var loc = form.selector2.value;
+                var date = form.date.value;
+
+                document.getElementById("modal_type").innerHTML = type;
+                document.getElementById("modal_loc").innerHTML = loc;
+                document.getElementById("modal_date").innerHTML = date;
+                document.getElementById("modal_time").innerHTML = id.toString();
+
+                modal.style.display = "block";
+            }
+
+            span.onclick = function(){
+                modal.style.display = "none";
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+            function confirmAppt(){
+                document.getElementById("modal_type").innerHTML = "";
+                console.log(document.getElementById("modal_type").innerHTML);
+                document.getElementById("modal_loc").innerHTML = "";
+                document.getElementById("modal_date").innerHTML = "";
+                document.getElementById("modal_time").innerHTML = "";
+                document.getElementById("top").innerHTML = "You have confirmed your appointment!";
+                modal.style.height = "10%";
+                document.getElementById("modal_confirm").style.display = "none";
+                setTimeout(function(){closeModal()}, 3000);
+
+            }
+
+            function closeModal(){
+                document.getElementById("times_container").style.display = "none";
+                modal.style.display = "none";
+                modal.style.height = "28%";
+                document.getElementById("modal_loc").innerHTML = "";
+                document.getElementById("modal_date").innerHTML = "";
+                document.getElementById("modal_time").innerHTML = "";
+                document.getElementById("modal_confirm").style.display = "block";
+            }
+        </script>
+    </body>
+</html>
